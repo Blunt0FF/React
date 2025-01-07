@@ -1,0 +1,23 @@
+.light_background {
+    min-height: 15vh;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: lightblue;
+    border-top: 3px solid rgb(6, 63, 82);
+    color: navy;
+}
+
+.dark_background {
+    min-height: 15vh;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    background: rgb(6, 63, 82);
+    border-top: 3px solid lightblue;
+    color: lightblue;
+}
