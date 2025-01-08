@@ -1,0 +1,9 @@
+.body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(70deg, rgb(148, 211, 236), pink);
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
