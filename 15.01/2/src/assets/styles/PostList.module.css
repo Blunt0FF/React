@@ -1,0 +1,31 @@
+.postListContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.postList {
+    background: rgba(131, 131, 218, 0.623);
+    border: 5px solid rgba(131, 131, 218, 0.856);
+    border-radius: 10px;
+    overflow-x: auto;
+    height: 800px;
+    width: 1500px;
+    list-style: none;
+}
+
+.postListButton {
+    background: rgba(173, 216, 230, 0.74);
+    border: 5px solid lightblue;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+    color: rgb(36, 0, 241);
+    font-size: medium;
+    transition: 0.3s;
+}
+
+.postListButton:hover {
+    background: rgba(8, 186, 245, 0.705);
+}

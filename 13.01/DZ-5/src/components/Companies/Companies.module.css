@@ -1,0 +1,23 @@
+.companies {
+  background-color: #fff;
+  margin-top: 295px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 180px;
+}
+
+.companies_text {
+  font-size: var(--md);
+  font-family: 'Raleway-SemiBold', Helvetica, sans-serif;
+  color: '#696969';
+}
+
+.companies_list {
+  display: flex;
+  gap: 56px;
+  align-items: center;
+}

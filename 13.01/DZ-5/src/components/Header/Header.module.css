@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 104px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 53px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  opacity: 0.7;
+}
+
+.logo {
+  font-family: 'RedHatDisplay-Bold', Arial, sans-serif;
+  font-size: 30px;
+  line-height: 40px;
+  color: #270459;
+  font-weight: bold;
+}
+
+.sign_button {
+  width: 65px;
+  height: 44px;
+  background-color: #fff;
+  color: #274059;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.sign_button:hover {
+  opacity: 0.7;
+}

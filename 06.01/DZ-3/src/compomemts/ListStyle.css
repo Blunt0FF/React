@@ -1,0 +1,21 @@
+.ulStyle {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .ulStyle li {
+    padding: 10px 15px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+  
+  .ulStyle li:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+  }

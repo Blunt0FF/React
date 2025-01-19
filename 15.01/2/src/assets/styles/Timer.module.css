@@ -1,0 +1,42 @@
+.timerDiv {
+    height: 500px;
+    width: 500px;
+    background-color: rgba(166, 238, 221, 0.404);
+    border: 3px solid rgba(166, 238, 221, 0.74);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.timerTitle {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 80px;
+    color: rgba(36, 202, 108, 0.747);
+}
+
+.timerButton {
+    height: 65px;
+    width: 145px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;;
+    color: rgba(2, 99, 44, 0.979);
+    background-color: rgba(166, 238, 221, 0.404);
+    border: 1px solid rgba(166, 238, 221, 0.74);
+    border-radius: 8px;
+    margin: 10px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+margin: 10px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}

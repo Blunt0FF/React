@@ -1,0 +1,29 @@
+.cardList_wrapper {
+  margin-top: 107px;
+}
+
+.title {
+  font-family: 'Raleway-Bold', Helvetica, sans-serif;
+  font-size: 28px;
+  line-height: 33px;
+}
+
+.cardlist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px 92px;
+  margin-top: 43px;
+}
+
+.moreCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding: 29px;
+  height: 190px;
+  width: 270px;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.25);
+}
