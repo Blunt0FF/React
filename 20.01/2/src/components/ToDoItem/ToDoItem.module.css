@@ -1,0 +1,17 @@
+.li {
+  background: rgba(142, 153, 204, 0.548);
+  border: 1px solid black;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.button {
+  background-color: white;
+  border-radius: 5px;
+  height: 20px;
+}

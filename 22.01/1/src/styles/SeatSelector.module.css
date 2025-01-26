@@ -1,0 +1,9 @@
+.button {
+  height: 40px;
+  width: 70px;
+  margin: 10px;
+  border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}

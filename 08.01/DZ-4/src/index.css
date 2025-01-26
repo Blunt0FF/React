@@ -1,0 +1,133 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-image: url("./assets/background.webp");
+  background-size: cover; /* Для полного покрытия экрана */
+  background-repeat: no-repeat; /* Чтобы изображение не повторялось */
+  background-position: center; /* Центровка изображения */
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+img{
+  max-width: 800px;
+}
+
+ul {
+  list-style: none;
+}
+
+select {
+  appearance: none; /* Убирает стандартный стиль браузера */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #f0f0f0; /* Светлый фон */
+  color: #333; /* Цвет текста */
+  border: 2px solid #6c63ff; /* Границы с ярким цветом */
+  border-radius: 8px; /* Закругленные углы */
+  padding: 10px 20px; /* Отступы внутри */
+  font-size: 16px; /* Размер текста */
+  font-family: 'Arial', sans-serif; /* Шрифт */
+  cursor: pointer; /* Изменение курсора при наведении */
+  transition: all 0.3s ease; /* Анимация изменений */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+}
+
+select:hover {
+  background-color: #ff63ff; /* Смена фона при наведении */
+  color: #fff; /* Смена цвета текста */
+}
+
+select:focus {
+  outline: none; /* Убирает стандартную обводку */
+  border-color: #4a42d1; /* Цвет границы при фокусе */
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.8); /* Светящееся выделение */
+}
+
+option {
+  background-color: #274e7e; /* Фон для опций */
+  color: #333; /* Цвет текста */
+}
+
+h2 {
+  font-size: 24px; /* Размер текста */
+  font-weight: 600; /* Полужирный текст */
+  color: #25259787; /* Приятный цвет текста */
+  letter-spacing: 1px; /* Лёгкий интервал между буквами */
+  margin: 10px 0; /* Отступы сверху и снизу */
+  padding: 0; /* Без внутренних отступов */
+  line-height: 1.4; /* Улучшенная читаемость */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Лёгкая тень текста */
+}
+
+p, ul{
+  font-size: 16px; /* Оптимальный размер текста */
+  line-height: 1.5; /* Пространство между строками */
+  color: #41377b; /* Нейтральный цвет текста */
+  margin: 8px 0; /* Минимальные отступы сверху и снизу */
+  padding: 0; /* Без внутренних отступов */
+  font-family: 'Arial', sans-serif; /* Стандартный шрифт */
+}
+

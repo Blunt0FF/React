@@ -1,0 +1,9 @@
+.event_booking {
+  background: rgba(145, 219, 217, 0.623);
+  padding: 100px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.144);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  color: rgb(0, 58, 247);
+}

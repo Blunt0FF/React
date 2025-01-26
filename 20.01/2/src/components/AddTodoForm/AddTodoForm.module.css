@@ -1,0 +1,20 @@
+.input {
+  background: rgba(202, 163, 202, 0.774);
+  color: white;
+  border: 1px solid aliceblue;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+::-webkit-input-placeholder {
+  color: white;
+}
+
+.button {
+  background: rgba(139, 144, 221, 0.911);
+  color: white;
+  border: 1px solid aliceblue;
+  border-radius: 5px;
+  padding: 10px;
+  margin-left: 10px;
+}
