@@ -66,3 +66,51 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+.card {
+  background-color: #CBF3A3; /* Светлый фон карточки */
+  border-radius: 15px; /* Закругленные углы */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  padding: 20px;
+  width: 300px; /* Фиксированная ширина */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Центрируем контент */
+  transition: all 0.3s ease-in-out; /* Плавный переход */
+}
+
+
+.card img {
+  border-radius: 50%; /* Круглая форма для изображения */
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* Обрезка изображения по кругу */
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  color: #333; /* Темный цвет для текста */
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.card p {
+  color: #777; /* Более светлый цвет для параграфов */
+  font-size: 1em;
+  margin: 5px 0;
+}
+
+.card button {
+  background-color: #1181F1; /* Синий фон кнопки */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.card button:hover {
+  background-color: #0c68b3; /* Темно-синий цвет кнопки при наведении */
+}

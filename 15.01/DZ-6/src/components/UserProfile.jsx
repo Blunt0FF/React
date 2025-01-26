@@ -32,7 +32,7 @@ export default function UserProfile() {
         return <div>Could not find user</div>
     }
   return (
-    <div>
+    <div className='card'>
         <img src={user.picture.medium} alt="Profile picture" />
         <h2>{user.name.first} {user.name.last}</h2>
         <p>Email: {user.email}</p>
