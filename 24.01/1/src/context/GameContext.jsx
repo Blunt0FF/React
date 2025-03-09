@@ -1,12 +1,15 @@
 import { createContext, useEffect, useState } from 'react'
 
-const GameContext = createContext(null)
+export const GameContext = createContext(null)
 
-export default function GameProvider({ children }) {
+const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼']
+
+export function GameProvider({ children }) {
   const [cards, setCards] = useState(generateCards())
   const [turns, setTurns] = useState(0)
   const [matchesLeft, setMatchesLeft] = useState(emojis.length)
   const [flippedCards, setFlippedCards] = useState([])
+  const [win, setWin] = useState(false)
 
   // [1, 2, 3, 4, 5, 6, 7, 8] => cards
   // [3, 6] => flippedCards
@@ -20,8 +23,11 @@ export default function GameProvider({ children }) {
       setTurns(prevTurns => prevTurns + 1) // dont use increment
       const isMatch = flippedCards[0].emoji === flippedCards[1].emoji
 
+    
+
       if (isMatch) {
-        setMatchesLeft(prevLeftMatches => prevLeftMatches - 1)
+        const newMatches = matchesLeft - 2
+        setMatchesLeft(newMatches)
         setCards(
           cards.map(card =>
             card.id === flippedCards[0].id || card.id === flippedCards[1].id
@@ -29,8 +35,16 @@ export default function GameProvider({ children }) {
               : card
           )
         )
+
+        if (newMatches === 0) {
+          setWin(true)
+        }
+
+
         setFlippedCards([])
       } else {
+        console.log('NO MATCH');
+        
         setTimeout(() => {
           setCards(
             cards.map(card =>
@@ -45,7 +59,7 @@ export default function GameProvider({ children }) {
     }
   }, [cards, flippedCards]) // massiv must have
 
-  const emojis = ['🐶', '🐱', '🐭', '🐹', '🐰', '🦊', '🐻', '🐼']
+
 
   function generateCards() {
     const duplicated = [...emojis, ...emojis]
@@ -63,7 +77,7 @@ export default function GameProvider({ children }) {
     //     isMatched: false
     //    }    ====>
     const newCards = duplicated.map(emoji => ({
-      id: Date.now(),
+      id: Math.random(),
       emoji: emoji,
       isFlipped: false,
       isMatched: false,
@@ -92,11 +106,12 @@ export default function GameProvider({ children }) {
     setTurns(0)
     setFlippedCards([])
     setMatchesLeft(emojis.length)
+    setWin(false)
   }
 
   return (
     <GameContext.Provider
-      value={{ cards, turns, matchesLeft, handleClick, reset }}
+      value={{ cards, turns, matchesLeft, handleClick, reset, win }}
     >
       {children}
     </GameContext.Provider>

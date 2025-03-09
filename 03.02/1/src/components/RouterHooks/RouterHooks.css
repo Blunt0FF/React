@@ -1,0 +1,50 @@
+.hooks-example {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hooks-example section {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.hooks-example h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.hooks-example h3 {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.hooks-example input {
+  padding: 8px;
+  margin: 10px 0;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.hooks-example .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hooks-example button {
+  padding: 8px 16px;
+  background-color: #0066cc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hooks-example button:hover {
+  background-color: #0052a3;
+}

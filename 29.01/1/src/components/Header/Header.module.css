@@ -1,0 +1,17 @@
+.header {
+  background-color: #3f5cc0;
+  min-height: 124px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 130px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}

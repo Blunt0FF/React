@@ -1,0 +1,18 @@
+.adminNav {
+  padding: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.adminLink {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.adminLink.active {
+  background: #34495e;
+  color: #3498db;
+}

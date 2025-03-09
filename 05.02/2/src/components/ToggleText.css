@@ -1,0 +1,12 @@
+.text {
+    transition: all 1s ease;
+    opacity: 0;
+  }
+  
+  .text.opening {
+    opacity: 1;
+  }
+  
+  .text.closing {
+    opacity: 0;
+  }

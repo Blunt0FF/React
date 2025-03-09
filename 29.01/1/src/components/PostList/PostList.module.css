@@ -1,0 +1,35 @@
+.postListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 55px 114px;
+  background-color: #7d9fff;
+}
+
+.title {
+  font-size: 36px;
+  line-height: 43.88px;
+}
+
+.postList {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.nextBtn {
+  align-self: end;
+  width: 115.54px;
+  height: 40px;
+  border-radius: 15px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #3f5cc0cc;
+  font-size: 16px;
+  list-style: 19.5px;
+}
+
+.nextBtn:hover {
+  opacity: 0.5;
+}

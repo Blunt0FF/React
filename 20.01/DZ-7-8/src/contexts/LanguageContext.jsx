@@ -4,6 +4,7 @@ export const LanguageContext = createContext()
 
 export const LanguageProvider = ({children}) => {
     const [currentLanguage, setCurrentLanguage] = useState('ru')
+    
 
     const translations = {
         ru:{

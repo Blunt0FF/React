@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap');
+
+#root {
+  height: 100vh;
+}
+
+:root {
+  --font-family: 'Montserrat', sans-serif;
+  --font-regular: 400;
+  --font-button: 600;
+  --font-bold: 700;
+  --font-black: 900;
+  --font-size-basic: 14px;
+  --font-size-input: 18px;
+  --line-height-basic: 1.2;
+  --color-text: black;
+  --color-text-secondary: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-weight: var(--font-regular);
+  font-size: var(--font-size-basic);
+  color: var(--color-text);
+  line-height: var(--line-height-basic)
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    opacity: .7;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-weight: var(--font-button);
+  font-size: var(--font-size-input);
+  font-family: var(--font-family);
+  color: var(--color-text-secondary);
+}
+
+input, textarea, select {
+  font-size: var(--font-size-input);
+  font-family: var(--font-family);
+  background: transparent;
+  border: none;
+}

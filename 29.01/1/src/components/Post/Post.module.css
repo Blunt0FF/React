@@ -1,0 +1,58 @@
+.post {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 22.5px 27px 22.5px;
+  border-radius: 15px;
+  border: none;
+  background-color: #3f5cc0cc;
+  width: 815px;
+}
+
+.imageWrapper {
+  padding-right: 109px;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.imageWrapper img {
+  width: 42px;
+  height: 42px;
+}
+
+.postContent {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding-left: 48.24px;
+}
+
+.title {
+  font-size: 32px;
+  line-height: 39.01px;
+}
+
+.text {
+  font-size: 55px;
+  line-height: 67.05px;
+}
+
+.rightSide {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+}
+
+.postId {
+  font-size: 16px;
+  line-height: 19.5px;
+}
+
+.postDeleteBtn {
+  width: 94px;
+  height: 37px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #0d3d3066;
+  font-size: 16px;
+  list-style: 19.5px;
+}

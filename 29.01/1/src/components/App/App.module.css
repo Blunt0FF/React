@@ -1,0 +1,11 @@
+.app {
+  background-color: #96dcff;
+  font-family: 'Montserrat', sans-serif;
+  color: #090808cc;
+}
+
+main {
+  padding: 64px 130px;
+  display: flex;
+  gap: 110px;
+}
