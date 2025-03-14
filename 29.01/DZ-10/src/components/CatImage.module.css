@@ -1,0 +1,96 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+}
+img {
+    max-width: 800px;
+    max-height: 700px;
+    opacity: 0;
+    animation: fadeIn 0.2s forwards; 
+    transform: scale(0.3);
+    animation-delay: 0.1s; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #ff6b6b, #f9a602, #4e9bde, #48c78e); /* Градиент */
+    background-size: 400% 400%; /* Размер фона для анимации */
+    color: transparent; /* Делаем текст прозрачным, чтобы был виден только градиент */
+    -webkit-background-clip: text; /* Обрезаем фон по тексту для использования градиента */
+    background-clip: text;
+    animation: gradientAnimation 3s ease infinite; /* Анимация для плавного перелива */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #f0f0f0;
+    border: 1px solid #000;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 20px;
+    color: transparent; /* Делаем текст прозрачным */
+    background: linear-gradient(45deg, #ff6b6b, #f9a602, #4e9bde, #48c78e); /* Градиент для кнопки */
+    background-size: 400% 400%; /* Размер фона для анимации */
+    -webkit-background-clip: text; /* Обрезаем фон по тексту */
+    background-clip: text;
+    animation: gradientAnimation 3s ease infinite; /* Анимация для кнопки */
+}
+
+
+button::after {
+    content: '🐱';
+    margin-left: 10px;
+}
+
+/* Анимация для плавного перелива */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}

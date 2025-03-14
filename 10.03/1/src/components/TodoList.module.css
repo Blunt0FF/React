@@ -1,0 +1,13 @@
+.list {
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+.empty{
+    text-align: center;
+    padding: 2rem;
+    color: #ccc;
+    font-size: 1.5rem;
+    font-style: italic;
+}
