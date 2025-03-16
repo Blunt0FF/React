@@ -1,0 +1,21 @@
+.userList {
+    padding: 0;
+    margin-bottom: 70px;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
+  }
+
+  h1 {
+    font-family: 'verdana';
+    background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 4.5s infinite alternate ease-in-out;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
