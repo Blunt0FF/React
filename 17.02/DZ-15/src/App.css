@@ -1,0 +1,121 @@
+/* Градиентный фон с переливами */
+body {
+  margin: 0 auto;
+  width: 850px;
+  margin-top: 150px;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+  background-size: 800% 800%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+/* Анимация градиента */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Стиль заголовка */
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: bounce 2s infinite;
+}
+
+/* Анимация подпрыгивания */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Поле ввода */
+input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Эффект при фокусе на поле ввода */
+input:focus {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+/* Список пользователей */
+.UserList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+/* Стиль для элементов списка */
+.user-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавный переход */
+}
+
+/* Эффект плавного движения при наведении */
+.user-item:hover {
+  transform: translate(-5px, -5px); /* Легкое смещение вверх и влево */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Увеличение тени */
+}
+
+/* Анимация появления элементов списка */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Сообщение об отсутствии пользователей */
+p {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  animation: shake 2s infinite;
+}
+
+/* Анимация тряски */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX
