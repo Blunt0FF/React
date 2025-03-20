@@ -9,16 +9,22 @@ const initialState = {
 };
 
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
-  const response = await axios.get('/api/categories/all');
+  const response = await axios.get('/categories/all'); // Используйте правильный путь
   return response.data;
 });
 
-export const fetchProducts = createAsyncThunk('products/fetchProducts', async () => {
-  const response = await axios.get('/api/products');
-  if (!Array.isArray(response.data)) {
-    throw new Error('Data is not an array');
+export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue }) => {
+  try {
+    const response = await axios.get('/products/all'); // Используйте правильный путь
+    console.log('API Response:', response.data);
+    if (!Array.isArray(response.data)) {
+      throw new Error('Data is not an array');
+    }
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching products:', error);
+    return rejectWithValue(error.message);
   }
-  return response.data;
 });
 
 const productsSlice = createSlice({

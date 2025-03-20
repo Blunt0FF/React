@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { clearCart, updateQuantity, removeItem } from '../app/cartSlice';
 
 const CartPage = () => {
@@ -27,6 +28,7 @@ const CartPage = () => {
         phone: '',
         email: '',
     });
+
     const [error, setError] = useState('');
     const [showPopup, setShowPopup] = useState(false);
 
@@ -46,7 +48,6 @@ const CartPage = () => {
     // Обработчик отправки формы
     const handleSubmit = async (e) => {
         e.preventDefault();
-
         const { name, phone, email } = formData;
 
         // Регулярные выражения для валидации данных
@@ -73,7 +74,6 @@ const CartPage = () => {
         }
 
         try {
-
             // Формируем данные для отправки на сервер
             const requestData = {
                 name: formData.name,
@@ -104,7 +104,6 @@ const CartPage = () => {
             }
 
             const data = await response.json();
-
             setError('');
             setShowPopup(true);
         } catch (error) {
@@ -147,7 +146,6 @@ const CartPage = () => {
     return (
         <div className="cart-page">
             <h2>Shopping Cart</h2>
-
             {cartItems.length === 0 ? (
                 <p>Your cart is empty.</p>
             ) : (
@@ -156,13 +154,18 @@ const CartPage = () => {
                         <div className="cart-items">
                             {cartItems.map((item) => (
                                 <div key={item.id} className="cart-item">
+                                    {/* Изображение товара */}
                                     <img
                                         src={`http://localhost:3333${item.image}`}
                                         alt={item.title}
                                         className="cart-item__image"
                                     />
+                                    {/* Информация о товаре */}
                                     <div className="cart-item__info">
-                                        <h3>{item.title}</h3>
+                                        {/* Название товара с NavLink */}
+                                        <NavLink to={`/products/${item.id}`} className="cart-item__title-link">
+                                            <h3>{item.title}</h3>
+                                        </NavLink>
                                         <div className="selector_and_price">
                                             <div className="quantity-selector">
                                                 <button
@@ -203,6 +206,7 @@ const CartPage = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    {/* Кнопка удаления товара */}
                                     <div className='cart-item__remove'>
                                         <button
                                             className="cart-item__remove-button"
@@ -214,7 +218,6 @@ const CartPage = () => {
                                 </div>
                             ))}
                         </div>
-
                         {/* Детали заказа */}
                         <div className="order-details">
                             <h3>Order details</h3>
@@ -269,7 +272,6 @@ const CartPage = () => {
                     </div>
                 </>
             )}
-
             {/* Поп-ап подтверждения заказа */}
             {showPopup && (
                 <div className="popup-overlay">

@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux'; // Для работы с Redux
 import { useParams, NavLink } from 'react-router-dom';
+import { addItem } from '../app/cartSlice'; // Импортируем действие добавления в корзину
 
 export default function Category() {
+    const dispatch = useDispatch(); // Получаем доступ к dispatch
     const { id } = useParams();
     const [category, setCategory] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -32,7 +35,7 @@ export default function Category() {
     }, [id]);
 
     if (loading) {
-        return  null; // Добавил лоадер
+        return null; // Лоадер
     }
 
     if (!category || !category.data || !Array.isArray(category.data)) {
@@ -60,6 +63,11 @@ export default function Category() {
                 return 0;
         }
     });
+
+    // Обработчик добавления товара в корзину
+    const handleAddToCart = (product) => {
+        dispatch(addItem({ ...product, quantity: 1 })); // Добавляем товар с количеством 1
+    };
 
     return (
         <div className="ProductListPage">
@@ -107,7 +115,6 @@ export default function Category() {
                         checked={includeDiscount}
                         onChange={() => setIncludeDiscount(!includeDiscount)}
                         className='discount-filter-input'
-
                     />
                 </div>
 
@@ -131,12 +138,12 @@ export default function Category() {
             <div className="product-grid">
                 {sortedProducts.map((product) => (
                     <NavLink
-    key={product.id}
-    to={`/products/${product.id}`}
-    state={{
-        from: 'categories',
-        categoryTitle: category.category.title // Передаем название категории
-    }}
+                        key={product.id}
+                        to={`/products/${product.id}`}
+                        state={{
+                            from: 'categories',
+                            categoryTitle: category.category.title // Передаем название категории
+                        }}
                         className="product-card"
                     >
                         {/* Изображение */}
@@ -150,7 +157,15 @@ export default function Category() {
                             )}
                             {/* Кнопка "Add to cart" */}
                             <div className="add-to-cart-box">
-                                <button className="add-to-cart-button">Add to cart</button>
+                                <button
+                                    className="add-to-cart-button"
+                                    onClick={(e) => {
+                                        e.preventDefault(); // Предотвращаем переход по ссылке
+                                        handleAddToCart(product); // Добавляем товар в корзину
+                                    }}
+                                >
+                                    Add to cart
+                                </button>
                             </div>
                         </div>
                         {/* Информация о товаре */}
