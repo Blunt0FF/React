@@ -9,13 +9,13 @@ const initialState = {
 };
 
 export const fetchCategories = createAsyncThunk('categories/fetchCategories', async () => {
-  const response = await axios.get('/categories/all'); // Используйте правильный путь
+  const response = await axios.get('/categories/all'); 
   return response.data;
 });
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get('/products/all'); // Используйте правильный путь
+    const response = await axios.get('/products/all');
     console.log('API Response:', response.data);
     if (!Array.isArray(response.data)) {
       throw new Error('Data is not an array');
