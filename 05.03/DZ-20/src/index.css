@@ -1,0 +1,119 @@
+/* Общий контейнер */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Градиентный фон */
+  border-radius: 15px; /* Закругление углов */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Тень для объема */
+}
+
+/* Логотип */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Плавные переходы */
+  border-radius: 50%; /* Круглая форма */
+  background: linear-gradient(45deg, #ff7eb3, #ff758c); /* Градиентный фон логотипа */
+  box-shadow: 0 5px 15px rgba(255, 127, 140, 0.5); /* Тень */
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #ff758caa); /* Светящаяся тень */
+  transform: scale(1.1) rotate(10deg); /* Увеличение и небольшой поворот */
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa); /* Разный эффект для React */
+  transform: scale(1.1) rotate(-10deg);
+}
+
+/* Анимация вращения логотипа */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 10s linear; /* Быстрее и веселее */
+  }
+}
+
+/* Карточки */
+.card {
+  padding: 2em;
+  margin: 1em 0;
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee); /* Градиентный фон карточки */
+  border-radius: 15px; /* Закругление углов */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Тень */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавные переходы */
+}
+.card:hover {
+  transform: translateY(-10px); /* Приподнимание при наведении */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Большая тень */
+}
+
+/* Текст "Read the Docs" */
+.read-the-docs {
+  color: #fff; /* Белый текст */
+  font-size: 1.2rem;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Тень для текста */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+.read-the-docs:hover {
+  color: #ff758c; /* Изменение цвета при наведении */
+  transform: scale(1.1); /* Увеличение текста */
+}
+
+/* Дополнительные анимации для кнопок */
+button {
+  padding: 1em 2em;
+  background: linear-gradient(45deg, #ff7eb3, #ff758c); /* Градиентная кнопка */
+  color: white;
+  border: none;
+  border-radius: 10px; /* Закругление углов */
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 127, 140, 0.5); /* Тень */
+}
+button:hover {
+  transform: scale(1.1); /* Увеличение кнопки */
+  box-shadow: 0 10px 30px rgba(255, 127, 140, 0.7); /* Большая тень */
+}
+
+/* Анимация загрузки страницы */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  animation: fadeIn 1s ease;
+}
+
+input{
+  width: 200px;
+  padding: 1.75rem;
+  border: 2px solid #007bff;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+  &:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+  }
+}
