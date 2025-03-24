@@ -4,6 +4,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 const router = express.Router();
+const JWT_SECRET = 'your-secret-key'; // Единый секретный ключ для JWT
 
 // Регистрация пользователя
 router.post('/register', async (req, res) => {
@@ -12,7 +13,7 @@ router.post('/register', async (req, res) => {
   try {
     let user = await User.findOne({ email });
     if (user) {
-      return res.status(400).json({ msg: 'User already exists' });
+      return res.status(400).json({ message: 'User already exists' });
     }
 
     user = new User({
@@ -30,7 +31,7 @@ router.post('/register', async (req, res) => {
 
     jwt.sign(
       payload,
-      '123456', // Замените на ваш секретный ключ
+      JWT_SECRET,
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;
@@ -50,12 +51,12 @@ router.post('/login', async (req, res) => {
   try {
     const user = await User.findOne({ email });
     if (!user) {
-      return res.status(400).json({ msg: 'Invalid credentials' });
+      return res.status(400).json({ message: 'Invalid credentials' });
     }
 
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      return res.status(400).json({ msg: 'Invalid credentials' });
+      return res.status(400).json({ message: 'Invalid credentials' });
     }
 
     const payload = {
@@ -66,7 +67,7 @@ router.post('/login', async (req, res) => {
 
     jwt.sign(
       payload,
-      'mysecret', // Замените на ваш секретный ключ
+      JWT_SECRET,
       { expiresIn: '1h' },
       (err, token) => {
         if (err) throw err;

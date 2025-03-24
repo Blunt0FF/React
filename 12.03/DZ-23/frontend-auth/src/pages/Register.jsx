@@ -1,88 +1,134 @@
-import { Box, Button, TextField, Typography } from '@mui/material'
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
-import { register, resetState } from '../features/auth/authSlice'
+import { Box, Button, TextField, Typography, Alert } from '@mui/material';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { register, resetState, logout } from '../features/auth/authSlice';
+import { useState } from 'react';
 
 export default function Register() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { isLoading, isError, isSuccess, message } = useSelector(
-    state => state.auth
-  )
-  const dispatch = useDispatch()
+    (state) => state.auth
+  );
   const [formData, setFormData] = useState({
     email: '',
     password: '',
     confirmPassword: '',
-  })
+  });
 
-  const handleChange = e => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  // Выполняем выход из системы при монтировании компонента
+  useEffect(() => {
+    dispatch(logout());
+  }, [dispatch]);
 
-  const handleSubmit = e => {
-    e.preventDefault()
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
-      alert("Passwords don't match")
-      return
+      alert("Passwords don't match");
+      return;
     }
-    dispatch(register({ email: formData.email, password: formData.password }))
-  }
+
+    dispatch(register({ email: formData.email, password: formData.password }));
+  };
 
   useEffect(() => {
     return () => {
-      dispatch(resetState())
-    }
-  }, [dispatch])
+      dispatch(resetState());
+    };
+  }, [dispatch]);
 
   useEffect(() => {
     if (isSuccess) {
-      navigate('/login')
+      navigate('/login');
     }
-  }, [isSuccess])
+  }, [isSuccess, navigate]);
 
   return (
-    <Box>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: 2,
+        maxWidth: 400,
+        margin: 'auto',
+        padding: 4,
+        border: '1px solid #ccc',
+        borderRadius: 4,
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      <Typography variant="h5" gutterBottom>
+        Регистрация
+      </Typography>
+
+      {/* Форма регистрации */}
       <form
         onSubmit={handleSubmit}
         style={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
-          gap: 24,
+          width: '100%',
+          gap: 16,
         }}
       >
         <TextField
-          type='email'
-          name='email'
-          placeholder='email'
+          type="email"
+          name="email"
+          label="Email"
           value={formData.email}
           onChange={handleChange}
           required
+          fullWidth
         />
         <TextField
-          type='password'
-          name='password'
-          placeholder='password'
+          type="password"
+          name="password"
+          label="Пароль"
           value={formData.password}
           onChange={handleChange}
           required
+          fullWidth
         />
         <TextField
-          type='password'
-          name='confirmPassword'
-          placeholder='confirm password'
+          type="password"
+          name="confirmPassword"
+          label="Подтвердите пароль"
           value={formData.confirmPassword}
           onChange={handleChange}
           required
+          fullWidth
         />
-        <Button disabled={isLoading} type='submit'>
-          Register
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          disabled={isLoading}
+          fullWidth
+        >
+          {isLoading ? 'Загрузка...' : 'Зарегистрироваться'}
         </Button>
       </form>
-      {isError && <Typography>{message}</Typography>}
-      {isSuccess && <Typography>Registration Successful</Typography>}
+
+      {/* Сообщение об ошибке */}
+      {isError && (
+        <Alert severity="error" sx={{ mt: 2 }}>
+          {message || 'Произошла ошибка при регистрации'}
+        </Alert>
+      )}
+
+      {/* Сообщение об успехе */}
+      {isSuccess && (
+        <Alert severity="success" sx={{ mt: 2 }}>
+          Регистрация прошла успешно!
+        </Alert>
+      )}
     </Box>
-  )
+  );
 }
